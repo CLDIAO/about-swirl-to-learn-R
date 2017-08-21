@@ -118,3 +118,14 @@ sub and gsub perform replacement of the first and all matches respectively.
 
 gsub(pattern, replacement, x, ignore.case = FALSE, perl = FALSE,
      fixed = FALSE, useBytes = FALSE)
+
+* pattern：	
+character string containing a regular expression  to be matched in the given character vector.
+* replacement：	
+a replacement for matched pattern in sub and gsub.
+* gregexpr.
+* x, text：	
+a character vector where matches are sought
+* ignore.case：	
+if FALSE, the pattern matching is case sensitive and if TRUE, case is ignored during matching.（区分大小写）
+
