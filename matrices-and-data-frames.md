@@ -129,3 +129,21 @@ a character vector where matches are sought
 * ignore.case：	
 if FALSE, the pattern matching is case sensitive and if TRUE, case is ignored during matching.（区分大小写）
 
+# write.table()
+write.table prints its required argument x (after converting it to a data frame if it is not one nor a matrix) to a file or connection.
+
+write.table(x, file = "", append = FALSE, quote = TRUE, sep = " ",
+            eol = "\n", na = "NA", dec = ".", row.names = TRUE,
+            col.names = TRUE, qmethod = c("escape", "double"),
+            fileEncoding = "")
+            
+* x:	
+the object to be written, preferably a matrix or data frame. If not, it is attempted to coerce x to a data frame.     
+* file:	
+either a character string naming a file or a connection open for writing. "" indicates output to the console.
+* sep:
+the field separator string. Values within each row of x are separated by this string.
+* row.names:	
+either a logical value indicating whether the row names of x are to be written along with x, or a character vector of row names to be written.
+* col.names:	
+either a logical value indicating whether the column names of x are to be written along with x, or a character vector of column names to be written. See the section on ‘CSV files’ for the meaning of col.names = NA.
