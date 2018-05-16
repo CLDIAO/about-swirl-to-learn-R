@@ -55,6 +55,18 @@ postscript("filename.ps")  PostScript文件
   命令help(package=" ")可以输出某个包的简短描述。常见错误有：错误的大小写、引号的使用、函数的括号、错用
 转义符、包的载入等。
 
+#### 常见错误
+
+①错误的大小写
+
+②忘记必要的引号
+
+③条用函数忘记使用括号
+
+④路径名中使用\
+
+⑥使用尚未载入的包中的函数
+
 ## 批处理
  
   多数情况下，我们交互式使用R：提示符后输入命令，等待输出结果。偶尔，我们想要以一种重复的、标准化的、无人值守的
@@ -62,10 +74,41 @@ postscript("filename.ps")  PostScript文件
   
   在windows，使用：
   
-  "C:\Program Files\R\R-2.13.0\bin\R.exe" CMD BATCH --vanilla --slave "c:\my projects\myscript.R" #?
+  "C:\Program Files\R\R-2.13.0\bin\R.exe" CMD BATCH --vanilla --slave "c:\my projects\myscript.R" 
   
-  
+  将路径调整为R.exe所在的相应的位置和脚本文件所在的位置。
   
+ ## 输出用为输入————结果的重用
+ 
+ T中分析的输出结果可保存并作为进一步分析的输入使用。例如：
+ 
+ lmfit <- lm(mpg~wt, data = mtcars)#在一个对象中保存结果
+ 
+ summary(lmfit)#可查看分析的统计概要
+ 
+ plot(lmfit)#可生成图形
+ 
+## 使用一个新包，代码
+
+help.start()
+
+install.package("vcd")#安装包
+ 
+help(package="vcd")#获取包中可用的函数和数据集
+
+library(vcd)#载入包
+
+help(Arthritis)#数据集的描述
+
+Arthritis#显示数据集的内容
+
+example(Athritis)#运行数据集的示例
+
+q()退出
+
+
+
+
 
 
 
